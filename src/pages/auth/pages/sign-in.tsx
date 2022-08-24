@@ -1,17 +1,17 @@
-import {AuthWrapper, SignInFormWrapper} from '../style'
 import {Button, Checkbox, Col, Input, Row, Typography} from 'antd'
 import {fetchAuthLoginValidateFx, opened, passwordMount, usernameMount} from '../model/model'
 import {useStore} from 'effector-react'
 import {Spinner} from '../../../shared/ui'
+import './style.css'
 
 export const SignIn = () => {
   const {Title} = Typography
   const loading = useStore(fetchAuthLoginValidateFx.pending)
 
   return (
-    <AuthWrapper>
+    <div className='auth-wrapper'>
       {loading && <Spinner/>}
-      <SignInFormWrapper>
+      <div className='auth-form'>
         <Row gutter={[0, 24]}>
           <Col span={24}>
             <Title level={3}>Sign in</Title>
@@ -47,7 +47,7 @@ export const SignIn = () => {
             <a href='/sign-up'>Sign Up</a>
           </Col>
         </Row>
-      </SignInFormWrapper>
-    </AuthWrapper>
+      </div>
+    </div>
   )
 }
