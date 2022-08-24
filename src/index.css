@@ -1,13 +1,36 @@
+@import 'antd/dist/antd.css';
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app {
+    position: relative;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+:root {
+    --basic-color: rgba(0, 0, 0, 0.85);
+    --basic-red: #F33F3F;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+}
+
+.ant-typography, h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.ant-typography{
+    color: #fff;
+    margin-bottom: 0;
 }

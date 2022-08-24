@@ -1,0 +1,20 @@
+.score-card-wrapper {
+    border-radius: 8px;
+    border: 1px solid var(--basic-red);
+    background: #2c2c2c;
+    padding: 12px;
+    width: 81px;
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score-number {
+    color: #A41B1B;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    font-variant: proportional-nums;
+}

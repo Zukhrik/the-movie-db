@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {LayoutPage} from './shared/ui'
+import {useEffect} from 'react'
+import {$sessionId, accountReq, createSessionRequested} from './entities/account/model/model'
+import {useStore} from 'effector-react'
 
 function App() {
+  const session = useStore($sessionId)
+
+  useEffect(() => {
+    if (!session) {
+      createSessionRequested()
+    }else {
+      accountReq()
+    }
+  }, [session])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <LayoutPage/>
+  )
 }
 
-export default App;
+export default App

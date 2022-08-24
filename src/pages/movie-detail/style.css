@@ -1,0 +1,20 @@
+.detail-wrapper {
+    height: 100vh;
+}
+
+.detail-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.detail-subtext {
+    font-size: 38px;
+    line-height: 1.23;
+    font-weight: 300;
+}
+
+.detail-genre {
+    display: flex;
+}

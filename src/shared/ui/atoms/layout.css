@@ -1,0 +1,37 @@
+.sider {
+    height: 100vh;
+}
+
+.ant-layout-sider-children {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    color: red;
+    line-height: 44px;
+    font-size: 34px;
+    text-align: center;
+    padding: 14px 0;
+    font-weight: 900;
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background: #242b31;
+}
+
+.content {
+    padding: 24px 50px;
+    height: 100vh;
+    overflow: hidden auto;
+    background: #141414;
+}
+
+.ant-layout-sider {
+    background: #000;
+}
+
+.ant-menu.ant-menu-dark {
+    background: #000;
+}

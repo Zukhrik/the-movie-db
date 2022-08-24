@@ -1,0 +1,10 @@
+.movie-card-wrapper {
+    color: #fff;
+}
+
+.img {
+    width: 150px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 6px;
+}
