@@ -1,11 +1,44 @@
 .auth-wrapper {
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #0d0a0b;
+}
+
+.auth-title {
+    font-size: 32px;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    width: 100%;
 }
 
 .auth-form {
     color: #fff;
+    width: 350px;
+    margin-top: 80px;
+}
+
+label {
+    font-size: 16px;
+}
+
+.ant-input {
+    margin-top: 6px;
+}
+
+.action-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-wrapper>button {
+    width: 80%;
+}
+
+.action-wrapper>h5>a {
+    color: var(--basic-red);
+    text-decoration: underline;
 }

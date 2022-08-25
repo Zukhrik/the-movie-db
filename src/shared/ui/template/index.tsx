@@ -1,9 +1,9 @@
 import {Layout} from 'antd'
-import {RoutesFile} from '../../../routes'
 import {Content} from 'antd/es/layout/layout'
 import Sider from 'antd/es/layout/Sider'
 import {LayoutSider} from '../organisms'
 import '../atoms/layout.css'
+import {RoutesFile} from '../../../pages/routes-file'
 
 export const LayoutPage = () => {
   return (

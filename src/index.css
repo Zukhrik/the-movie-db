@@ -34,3 +34,17 @@ code {
     color: #fff;
     margin-bottom: 0;
 }
+
+.ant-input {
+    background: transparent;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.ant-input:focus, .ant-input:hover {
+    border-color: #F33F3F;
+}
+
+.ant-btn-dangerous.ant-btn-primary {
+    color: rgba(0, 0, 0, 0.85);
+}

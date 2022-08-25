@@ -1,9 +1,9 @@
 import {Route, Routes} from 'react-router-dom'
-import {Home} from '../pages/home'
-import {SignIn, SignUp} from '../pages/auth'
-import {ActorList} from '../pages/actor-list'
-import {DetailPage} from '../pages/movie-detail'
-import {PopularPage} from '../pages/popular'
+import { Home } from './home'
+import {SignIn} from './auth'
+import {ActorList} from './actor-list'
+import {DetailPage} from './movie-detail'
+import {PopularPage} from './popular'
 
 const routing = [
   {
@@ -13,10 +13,6 @@ const routing = [
   {
     path: '/sign-in',
     component: <SignIn/>
-  },
-  {
-    path: '/sign-up',
-    component: <SignUp/>
   },
   {
     path: '/actor-list',
@@ -31,6 +27,7 @@ const routing = [
     component: <PopularPage/>
   }
 ]
+
 export const RoutesFile = () => {
 
   return (
