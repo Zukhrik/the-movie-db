@@ -1,0 +1,1 @@
+export {CastDetail} from './page'

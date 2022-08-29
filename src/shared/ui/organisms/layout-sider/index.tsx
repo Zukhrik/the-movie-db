@@ -1,9 +1,10 @@
-import {Menu} from 'antd'
-import {Profile} from '../molecules'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import {useStore} from 'effector-react'
-import {$account} from '../../../entities/account/model/model'
-import '../atoms/layout.css'
+import {$account} from '../../../../entities/account/model/model'
+import {Menu} from 'antd'
+import {Profile} from '../../molecules'
+import './style.css'
+
 
 type IMenu = {
   name: string

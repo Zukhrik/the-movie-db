@@ -1,5 +1,5 @@
 import {Typography} from 'antd'
-import '../atoms/score-card.css'
+import './score-card.css'
 
 type IProps = {
   score: number

@@ -1,8 +1,8 @@
 import {useEffect} from 'react'
-import {$discoverMovieList, fetchTopMovieFx, homePageOpened} from '../models/model'
 import {useStore} from 'effector-react'
 import {Col, Row} from 'antd'
 import {MovieCard, Spinner} from '../../../shared/ui'
+import {$discoverMovieList, fetchTopMovieFx, homePageOpened} from '../model/model'
 
 export const Home = () => {
   const list = useStore($discoverMovieList)

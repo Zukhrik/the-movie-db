@@ -1,5 +1,5 @@
 import {Avatar, Col, Row, Typography} from 'antd'
-import {IAccount} from '../../api/api.types'
+import { IAccount } from '../../../api'
 
 type IProps = {
   account: IAccount

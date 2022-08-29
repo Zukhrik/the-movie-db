@@ -2,7 +2,7 @@ import {Col, Image, Row} from 'antd'
 import moment from 'moment'
 import {useNavigate} from 'react-router-dom'
 import './movie-card.css'
-import {IMovieItem} from '../../../../pages/home/models/type.model'
+import {IMovieItem} from '../../../../pages/home/model/type.model'
 
 type IProps = {
   card: IMovieItem

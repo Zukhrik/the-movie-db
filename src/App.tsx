@@ -1,5 +1,5 @@
-import {LayoutPage} from './shared/ui'
 import {AppObserver} from './lib'
+import { LayoutPage } from './shared/ui'
 
 function App() {
 

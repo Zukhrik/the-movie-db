@@ -2,6 +2,13 @@
     height: 100vh;
 }
 
+.content {
+    padding: 24px 50px;
+    height: 100vh;
+    overflow: hidden auto;
+    background: #191919;
+}
+
 .ant-layout-sider-children {
     display: flex;
     flex-direction: column;
@@ -19,13 +26,6 @@
 
 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background: #242b31;
-}
-
-.content {
-    padding: 24px 50px;
-    height: 100vh;
-    overflow: hidden auto;
-    background: #191919;
 }
 
 .ant-layout-sider {

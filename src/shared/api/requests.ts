@@ -2,9 +2,10 @@ import {AxiosPromise as R} from 'axios'
 import {http} from './http'
 import {
   IAccount,
+  ICastDetail,
+  IMovieCredit,
   IMovieDetail,
   IMovieResponse,
-  IMovieReview,
   IPopularPerson,
   IRequestToken,
   ISession
@@ -33,12 +34,6 @@ export const createNewSession = (data: Pick<IRequestToken, 'request_token'>): R<
   })
 }
 
-export const getGuestSession = (): R<ISession> => {
-  return http({
-    url: '/authentication/guest_session/new'
-  })
-}
-
 export const authLoginValidate = (data: any): R<IRequestToken> => {
   return http({
     method: 'post',
@@ -61,16 +56,7 @@ export const getTopMovie = (): R<IMovieResponse> => {
 
 export const getMovieDetail = (movie_id: number): R<IMovieDetail> => {
   return http({
-    url: `/movie/${movie_id}`,
-    params: {
-      append_to_response: 'credits'
-    }
-  })
-}
-
-export const getMovieReview = (movie_id: number): R<IMovieReview> => {
-  return http({
-    url: `/movie/${movie_id}/reviews`
+    url: `/movie/${movie_id}`
   })
 }
 
@@ -83,5 +69,23 @@ export const getPopularPerson = (): R<IPopularPerson> => {
 export const getPopularMovies = (): R<IMovieResponse> => {
   return http({
     url: '/discover/movie?sort_by=popularity.desc'
+  })
+}
+
+export const getMovieCredits = (movie_id: number): R<IMovieCredit> => {
+  return http({
+    url: `/movie/${movie_id}/credits`
+  })
+}
+
+export const getCastDetail = (cast_id: number): R<ICastDetail> => {
+  return http({
+    url: `/person/${cast_id}`
+  })
+}
+
+export const getCombinedCredits = (id: number) => {
+  return http({
+    url: `/person/${id}/combined_credits`
   })
 }

@@ -1,0 +1,10 @@
+.sider {
+    height: 100vh;
+}
+
+.content {
+    padding: 24px 50px;
+    height: 100vh;
+    overflow: hidden auto;
+    background: #191919;
+}

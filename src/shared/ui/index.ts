@@ -1,2 +1,2 @@
 export * from './molecules'
-export {LayoutPage} from './pages'
+export * from './template'

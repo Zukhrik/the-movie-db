@@ -1,4 +1,4 @@
-import {IMovieItem} from '../../pages/home/models/type.model'
+import {IMovieItem} from '../../pages/home/model/type.model'
 
 export type IValidate = {
   username: string
@@ -40,8 +40,8 @@ export type IAccount = {
 export type IMovieResponse = {
   page: 1
   results: IMovieItem[]
-  total_pages: 34650
-  total_results: 692988
+  total_pages: number
+  total_results: number
 }
 
 export type IGenres = {
@@ -152,4 +152,56 @@ export type IMovieReview = {
   results: IAuthor[]
   total_pages: number
   total_results: number
+}
+
+export type ICast = {
+  adult: boolean
+  cast_id: number
+  character: string
+  credit_id: string
+  gender: number
+  id: number
+  known_for_department: string
+  name: string
+  order: number
+  original_name: string
+  popularity: number
+  profile_path: string
+}
+
+export type ICrew = {
+  adult: boolean
+  credit_id: string
+  department: string
+  gender: number
+  id: number
+  job: string
+  known_for_department: string
+  name: string
+  original_name: string
+  popularity: number
+  profile_path: any
+}
+
+export type IMovieCredit = {
+  cast: ICast[]
+  crew: ICrew[]
+  id: number
+}
+
+export type ICastDetail = {
+  adult: boolean
+  also_known_as: []
+  biography: string
+  birthday: string
+  deathday: string |  null
+  gender: number
+  homepage: null | any
+  id: number
+  imdb_id: string
+  known_for_department: string
+  name: string
+  place_of_birth: string
+  popularity: number
+  profile_path: string
 }

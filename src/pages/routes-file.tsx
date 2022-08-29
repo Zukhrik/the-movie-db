@@ -1,9 +1,11 @@
-import {Route, Routes} from 'react-router-dom'
-import { Home } from './home'
+import {Home} from './home'
 import {SignIn} from './auth'
 import {ActorList} from './actor-list'
 import {DetailPage} from './movie-detail'
 import {PopularPage} from './popular'
+import {Route, Routes} from 'react-router-dom'
+import {CastDetail} from './cast-detail'
+
 
 const routing = [
   {
@@ -25,6 +27,10 @@ const routing = [
   {
     path: '/popular',
     component: <PopularPage/>
+  },
+  {
+    path: '/cast/:cast_id',
+    component: <CastDetail/>
   }
 ]
 

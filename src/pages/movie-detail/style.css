@@ -1,5 +1,6 @@
 .detail-wrapper {
     height: 100vh;
+    color: #fff;
 }
 
 .detail-img {
@@ -16,5 +17,16 @@
 }
 
 .detail-genre {
+    display: flex;
+}
+
+.detail-genre > span::after {
+    content: ",";
+}
+
+.movie-card-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
     display: flex;
 }
