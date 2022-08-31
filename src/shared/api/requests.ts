@@ -89,3 +89,15 @@ export const getCombinedCredits = (id: number) => {
     url: `/person/${id}/combined_credits`
   })
 }
+
+export const getAccountFav = (account_id: number): R<IMovieResponse> => {
+  return http({
+    url: `/account/${account_id}/favorite/movies`
+  })
+}
+
+export const getAccountLists = (account_id: number): R<any> => {
+  return http({
+    url: `/account/${account_id}/lists`
+  })
+}

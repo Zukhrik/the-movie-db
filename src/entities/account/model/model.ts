@@ -1,8 +1,5 @@
 import {createEffect, createEvent, createStore, guard, sample} from 'effector'
-import {createNewSession, getAccount, getCreateRequestToken} from '../../../shared/api/requests'
-import {IAccount} from '../../../shared/api/api.types'
-import {history} from '../../../custom-history'
-import {forward} from 'effector/compat'
+import {createNewSession, getAccount, getCreateRequestToken, IAccount} from '../../../shared'
 
 //effects
 export const fetchCreateRequestTokenFx = createEffect({
@@ -21,9 +18,9 @@ export const saveSessionIdFx = createEffect((session: string) => {
   localStorage.setItem('session-id', session)
 })
 
-const historyGoHomeFx = createEffect(() => {
-  history.push('/')
-})
+// const historyGoHomeFx = createEffect(() => {
+//   history.push('/')
+// })
 
 //events
 export const createSessionRequested = createEvent()

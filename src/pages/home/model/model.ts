@@ -1,6 +1,6 @@
-import {getDiscoverMovie, getTopMovie} from '../../../shared/api/requests'
+import {getDiscoverMovie, getTopMovie} from '../../../shared'
 import {createEffect, createEvent, createStore, sample} from 'effector'
-import {IMovieResponse} from '../../../shared/api/api.types'
+import {IMovieResponse} from '../../../shared'
 
 //effects
 export const fetchGetMovieListFx = createEffect({

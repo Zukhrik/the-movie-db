@@ -1,5 +1,6 @@
 .movie-card-wrapper {
     color: #fff;
+    cursor: pointer;
 }
 
 .img {

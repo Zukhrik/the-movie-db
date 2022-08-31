@@ -7,6 +7,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #fff;
 }
 
 code {
@@ -30,7 +31,7 @@ code {
     right: 50%;
 }
 
-.ant-typography, h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.ant-typography{
+.ant-typography, h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.ant-typography {
     color: #fff;
     margin-bottom: 0;
 }

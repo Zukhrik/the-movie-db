@@ -1,19 +1,33 @@
 import {Avatar, Col, Row, Typography} from 'antd'
-import { IAccount } from '../../../api'
+import {IAccount} from '../../../api'
+import './style.css'
+import {useNavigate} from 'react-router-dom'
 
 type IProps = {
   account: IAccount
 }
 export const Profile = ({account}: IProps) => {
   const {Text} = Typography
+  const navigate = useNavigate()
 
   return (
-    <Row wrap={false} justify='space-between' align='middle' gutter={[12, 0]} style={{border: '1.5px solid #fff', borderRadius: 6, padding: 8}}>
+    <Row
+      wrap={false}
+      gutter={[12, 0]}
+      align='middle'
+      justify='space-between'
+      className='prof-wrapper'
+      onClick={() => navigate('/account')}
+    >
       <Col>
-        <Avatar src={`https://image.tmdb.org/t/p/original${account.avatar.tmdb.avatar_path}`} size={40} style={{border: '1px solid #fff'}}/>
+        <Avatar
+          size={40}
+          className='prof-avatar'
+          src={`https://image.tmdb.org/t/p/original${account.avatar.tmdb.avatar_path}`}
+        />
       </Col>
       <Col flex={1}>
-        <Text style={{color: '#fff', fontSize: 16, fontWeight: 600}}>{account.name.length > 1 ? account.name : account.username}</Text>
+        <Text className='prof-title'>{account.name.length > 1 ? account.name.split(' ', 1) : account.username}</Text>
       </Col>
     </Row>
   )

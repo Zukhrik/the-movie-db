@@ -1,6 +1,6 @@
 import {createEvent, createStore, sample} from 'effector'
 import {createEffect} from 'effector/compat'
-import {getMovieCredits, getMovieDetail} from '../../../shared/api/requests'
+import {getMovieCredits, getMovieDetail} from '../../../shared'
 import {IMovieCredit, IMovieDetail} from '../../../shared'
 
 

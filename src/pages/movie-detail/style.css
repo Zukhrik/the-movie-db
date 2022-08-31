@@ -30,3 +30,9 @@
     width: 100%;
     display: flex;
 }
+
+.see-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

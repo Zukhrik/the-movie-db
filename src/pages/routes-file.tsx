@@ -5,6 +5,8 @@ import {DetailPage} from './movie-detail'
 import {PopularPage} from './popular'
 import {Route, Routes} from 'react-router-dom'
 import {CastDetail} from './cast-detail'
+import {Favourite} from './favourite'
+import {AccountPage} from './account'
 
 
 const routing = [
@@ -31,6 +33,14 @@ const routing = [
   {
     path: '/cast/:cast_id',
     component: <CastDetail/>
+  },
+  {
+    path: '/favourite',
+    component: <Favourite/>
+  },
+  {
+    path: '/account',
+    component: <AccountPage/>
   }
 ]
 

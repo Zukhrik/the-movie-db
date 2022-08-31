@@ -1,0 +1,16 @@
+.prof-wrapper {
+    border: 1.5px solid #fff;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.prof-avatar {
+    border: 1px solid #fff;
+}
+
+.prof-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
