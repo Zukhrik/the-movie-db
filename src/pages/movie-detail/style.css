@@ -24,15 +24,12 @@
     content: ",";
 }
 
-.movie-card-wrapper {
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%;
-    display: flex;
-}
-
 .see-more {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.videos > iframe {
+    margin-right: 12px;
 }

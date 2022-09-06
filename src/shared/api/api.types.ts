@@ -1,24 +1,24 @@
 import {IMovieItem} from '../../pages/home/model/type.model'
 
-export type IValidate = {
+export interface IValidate {
   username: string
   password: string
   request_token: string
 }
 
-export type IRequestToken = {
+export interface IRequestToken {
   success: boolean
   expires_at: string
   request_token: string
 }
 
-export type ISession = {
+export interface ISession {
   success: boolean,
   session_id: string,
   expires_at: string
 }
 
-export type IAvatar = {
+export interface IAvatar {
   gravatar: {
     hash: string
   },
@@ -27,7 +27,7 @@ export type IAvatar = {
   }
 }
 
-export type IAccount = {
+export interface IAccount {
   avatar: IAvatar,
   id: number,
   iso_639_1: string,
@@ -37,36 +37,36 @@ export type IAccount = {
   username: string
 }
 
-export type IMovieResponse = {
+export interface IMovieResponse {
   page: 1
   results: IMovieItem[]
   total_pages: number
   total_results: number
 }
 
-export type IGenres = {
+export interface IGenres {
   id: number,
   name: string
 }
 
-export type IProductionCompany = {
+export interface IProductionCompany {
   id: number,
   logo_path: string,
   name: string,
   origin_country: string
 }
 
-export type IProductionCountry = {
+export interface IProductionCountry {
   iso_3166_1: string,
   name: string
 }
 
-export type ISpokenLanguage = {
+export interface ISpokenLanguage {
   iso_639_1: string,
   name: string
 }
 
-export type IMovieDetail = {
+export interface IMovieDetail {
   adult: boolean,
   backdrop_path: string,
   belongs_to_collection: null,
@@ -94,7 +94,7 @@ export type IMovieDetail = {
   vote_count: number
 }
 
-export type IKnownFor = {
+export interface IKnownFor {
   adult: boolean
   backdrop_path: string
   genre_ids: number[]
@@ -111,7 +111,7 @@ export type IKnownFor = {
   vote_count: number
 }
 
-export type IPerson = {
+export interface IPerson {
   adult: boolean
   gender: number
   id: number
@@ -122,21 +122,28 @@ export type IPerson = {
   profile_path: string
 }
 
-export type IPopularPerson = {
+export interface IMovieRecommend {
+  page: number
+  results: IKnownFor[]
+  total_results: number
+  total_pages: number
+}
+
+export interface IPopularPerson {
   page: number
   results: IPerson[]
   total_results: number
   total_pages: number
 }
 
-export type IAuthorDetail = {
+export interface IAuthorDetail {
   name: string
   username: string
   avatar_path: string | null
   rating: number | null
 }
 
-export type IAuthor = {
+export interface IAuthor {
   author: string
   author_details: IAuthorDetail
   content: string
@@ -146,7 +153,7 @@ export type IAuthor = {
   url: string
 }
 
-export type IMovieReview = {
+export interface IMovieReview {
   id: number
   page: number
   results: IAuthor[]
@@ -154,7 +161,7 @@ export type IMovieReview = {
   total_results: number
 }
 
-export type ICast = {
+export interface ICast {
   adult: boolean
   cast_id: number
   character: string
@@ -169,7 +176,7 @@ export type ICast = {
   profile_path: string
 }
 
-export type ICrew = {
+export interface ICrew {
   adult: boolean
   credit_id: string
   department: string
@@ -183,18 +190,18 @@ export type ICrew = {
   profile_path: any
 }
 
-export type IMovieCredit = {
+export interface IMovieCredit {
   cast: ICast[]
   crew: ICrew[]
   id: number
 }
 
-export type ICastDetail = {
+export interface ICastDetail {
   adult: boolean
   also_known_as: []
   biography: string
   birthday: string
-  deathday: string |  null
+  deathday: string | null
   gender: number
   homepage: null | any
   id: number
@@ -204,4 +211,73 @@ export type ICastDetail = {
   place_of_birth: string
   popularity: number
   profile_path: string
+}
+
+export interface ICastImgItem {
+  aspect_ratio: number
+  file_path: string
+  height: number
+  iso_639_1: number
+  vote_average: number
+  vote_count: number
+  width: number
+}
+
+export interface ICastImages {
+  id: number,
+  profiles: ICastImgItem[]
+}
+
+export interface ICastTargetImages {
+  aspect_ratio: number
+  file_path: string
+  height: number
+  id: string
+  image_type: string
+  iso_639_1: string
+  media: IKnownFor
+  media_type: string
+  vote_average: number
+  vote_count: number
+  width: number
+}
+
+export interface ITargetItem {
+  aspect_ratio: number
+  file_path: string
+  height: number
+  id: string
+  image_type: string
+  iso_639_1: string
+  media: IKnownFor
+  media_type: string
+  vote_average: number
+  vote_count: number
+  width: number
+}
+
+export interface ITargetImages {
+  id: number
+  page: number
+  results: ITargetItem[]
+  total_pages: number
+  total_results: number
+}
+
+export interface IVideo {
+  id: string
+  iso_639_1: string
+  iso_3166_1: string
+  key: string
+  name: string
+  official: boolean
+  published_at: string
+  site: string
+  size: number
+  type: string
+}
+
+export interface IMovieVideo {
+  id: number
+  results: IVideo[]
 }

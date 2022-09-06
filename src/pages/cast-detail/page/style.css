@@ -1,7 +1,26 @@
-.cast-detail-wrapper {
 
+.target-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.cast-img {
+.target-post > img {
+    width: 200px;
+    height: 280px;
+    margin-right: 24px;
+    border-radius: 5px;
+}
 
+.target-post > span {
+    font-size: 16px;
+    white-space: pre-wrap;
+    margin-top: 12px;
+}
+
+.cast-wrap > img {
+    width: 250px;
+    height: 360px;
+    margin-right: 12px;
+    object-fit: cover;
 }

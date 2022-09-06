@@ -49,3 +49,12 @@ code {
 .ant-btn-dangerous.ant-btn-primary {
     color: rgba(0, 0, 0, 0.85);
 }
+
+.scrollable-div {
+    display: flex;
+    overflow: auto hidden;
+}
+
+.scrollable-div::-webkit-scrollbar {
+    display: none;
+}

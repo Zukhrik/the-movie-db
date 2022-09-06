@@ -20,5 +20,3 @@ sample({
   source: opened,
   target: fetchAccountListsFx
 })
-
-$accListStore.watch(s => console.log(s))

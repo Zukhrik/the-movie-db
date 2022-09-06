@@ -1,6 +1,5 @@
 import {Home} from './home'
 import {SignIn} from './auth'
-import {ActorList} from './actor-list'
 import {DetailPage} from './movie-detail'
 import {PopularPage} from './popular'
 import {Route, Routes} from 'react-router-dom'
@@ -17,10 +16,6 @@ const routing = [
   {
     path: '/sign-in',
     component: <SignIn/>
-  },
-  {
-    path: '/actor-list',
-    component: <ActorList/>
   },
   {
     path: '/movie/:movie_id',

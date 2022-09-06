@@ -3,12 +3,15 @@ import {http} from './http'
 import {
   IAccount,
   ICastDetail,
+  ICastImages,
   IMovieCredit,
   IMovieDetail,
-  IMovieResponse,
+  IMovieRecommend,
+  IMovieResponse, IMovieVideo,
   IPopularPerson,
   IRequestToken,
-  ISession
+  ISession,
+  ITargetImages
 } from './api.types'
 
 export const getCreateRequestToken = (): R<IRequestToken> => {
@@ -84,12 +87,6 @@ export const getCastDetail = (cast_id: number): R<ICastDetail> => {
   })
 }
 
-export const getCombinedCredits = (id: number) => {
-  return http({
-    url: `/person/${id}/combined_credits`
-  })
-}
-
 export const getAccountFav = (account_id: number): R<IMovieResponse> => {
   return http({
     url: `/account/${account_id}/favorite/movies`
@@ -99,5 +96,29 @@ export const getAccountFav = (account_id: number): R<IMovieResponse> => {
 export const getAccountLists = (account_id: number): R<any> => {
   return http({
     url: `/account/${account_id}/lists`
+  })
+}
+
+export const getMovieRecommend = (movie_id: number): R<IMovieRecommend> => {
+  return http({
+    url: `/movie/${movie_id}/recommendations`
+  })
+}
+
+export const getCastImages = (person_id: number): R<ICastImages> => {
+  return http({
+    url: `/person/${person_id}/images`
+  })
+}
+
+export const getCastTargetImages = (person_id: number): R<ITargetImages> => {
+  return http({
+    url: `/person/${person_id}/tagged_images`
+  })
+}
+
+export const getMovieVideos = (movie_id: number): R<IMovieVideo> => {
+  return http({
+    url: `/movie/${movie_id}/videos`
   })
 }
