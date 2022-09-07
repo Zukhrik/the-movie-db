@@ -37,8 +37,26 @@ export interface IAccount {
   username: string
 }
 
+export interface IResultResponse<R> {
+  page: number
+  results: R
+  total_page: number
+  total_results: number
+}
+
+export interface IKnown {
+  adult: boolean
+  gender: number
+  id: number
+  known_for: IKnownFor[]
+  known_for_department: string
+  name: string
+  popularity: number
+  profile_path: string
+}
+
 export interface IMovieResponse {
-  page: 1
+  page: number
   results: IMovieItem[]
   total_pages: number
   total_results: number
@@ -100,6 +118,7 @@ export interface IKnownFor {
   genre_ids: number[]
   id: number
   media_type: string
+  name: string
   original_language: string
   original_title: string
   overview: string

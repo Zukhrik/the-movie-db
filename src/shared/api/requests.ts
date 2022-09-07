@@ -3,13 +3,14 @@ import {http} from './http'
 import {
   IAccount,
   ICastDetail,
-  ICastImages,
+  ICastImages, IKnown, IKnownFor,
   IMovieCredit,
   IMovieDetail,
   IMovieRecommend,
-  IMovieResponse, IMovieVideo,
+  IMovieResponse,
+  IMovieVideo,
   IPopularPerson,
-  IRequestToken,
+  IRequestToken, IResultResponse,
   ISession,
   ITargetImages
 } from './api.types'
@@ -120,5 +121,11 @@ export const getCastTargetImages = (person_id: number): R<ITargetImages> => {
 export const getMovieVideos = (movie_id: number): R<IMovieVideo> => {
   return http({
     url: `/movie/${movie_id}/videos`
+  })
+}
+
+export const getPopularPersons = (): R<IResultResponse<IKnown[]>> => {
+  return http({
+    url: '/person/popular'
   })
 }

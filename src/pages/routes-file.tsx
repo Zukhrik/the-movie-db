@@ -6,6 +6,7 @@ import {Route, Routes} from 'react-router-dom'
 import {CastDetail} from './cast-detail'
 import {Favourite} from './favourite'
 import {AccountPage} from './account'
+import {TopCasts} from './top-casts'
 
 
 const routing = [
@@ -36,6 +37,10 @@ const routing = [
   {
     path: '/account',
     component: <AccountPage/>
+  },
+  {
+    path: '/top_casts',
+    component: <TopCasts/>
   }
 ]
 

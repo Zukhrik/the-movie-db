@@ -1,0 +1,25 @@
+.top-cast-card {
+    cursor: pointer;
+}
+
+.top-cast-card > img {
+    width: 200px;
+}
+
+.cast-known-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 120px;
+    cursor: pointer;
+}
+
+.cast-known-wrap > img {
+    width: 100px;
+    height: 150px;
+}
+
+.cast-known-wrap > span {
+    white-space: pre-wrap;
+}

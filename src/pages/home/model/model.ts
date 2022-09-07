@@ -12,10 +12,12 @@ export const fetchTopMovieFx = createEffect({
 
 //events
 export const homePageOpened = createEvent()
+export const searchChanges = createEvent()
 
 //stores
 export const $discoverMovieList = createStore<null | IMovieResponse>(null)
 export const $topMoviesList = createStore<null | IMovieResponse>(null)
+export const $inputStore = createStore<string>('')
 
 $discoverMovieList.on(fetchGetMovieListFx.doneData, (_, {data}) => data)
 $topMoviesList.on(fetchTopMovieFx.doneData, (_, {data}) => data)

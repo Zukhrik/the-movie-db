@@ -24,6 +24,10 @@ export const menuData: IMenu[] = [
   {
     name: 'favorite',
     key: '/favourite'
+  },
+  {
+    name: 'top casts',
+    key: '/top_casts'
   }
 ]
 
