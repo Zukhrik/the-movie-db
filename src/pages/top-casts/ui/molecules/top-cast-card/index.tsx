@@ -14,7 +14,7 @@ export const TopCastCard = ({cast}: IProp) => {
 
   return (
     <Row wrap={false} gutter={[24, 0]} align='bottom'>
-      <Col className='top-cast-card' onClick={() => navigate(`/cast/${cast.id}`)}>
+      <Col className='cast-wrapper' onClick={() => navigate(`/cast/${cast.id}`)}>
         <img src={`${IMAGE_PATH.W500}${cast.profile_path}`} alt={cast.profile_path}/>
       </Col>
       <Col flex={1}>

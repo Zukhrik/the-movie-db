@@ -300,3 +300,10 @@ export interface IMovieVideo {
   id: number
   results: IVideo[]
 }
+
+export interface IParams {
+  query?: string
+  page?: number
+  include_adult?: boolean
+  region?: string
+}

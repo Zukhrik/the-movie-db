@@ -6,10 +6,10 @@
     width: 200px;
 }
 
-.cast-known-wrap {
+.cast-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-items: start;
     align-items: center;
     width: 120px;
     cursor: pointer;
