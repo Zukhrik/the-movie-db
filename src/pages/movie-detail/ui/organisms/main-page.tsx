@@ -20,13 +20,13 @@ export const MainPage = () => {
         movie && (
           <Row className='detail-wrapper' gutter={[0, 24]}>
             <Col span={24}>
-              <Row wrap={false} gutter={[48, 0]} align='middle'>
+              <Row wrap={false} gutter={[48, 0]} align='top'>
                 <Col span={6}>
                   <Image src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} className='detail-img'/>
                 </Col>
                 <Col flex={1}>
                   <Row gutter={[0, 12]}>
-                    <Col span={24} style={{display: 'flex', alignItems: 'center'}}>
+                    <Col span={24} style={{display: 'flex', alignItems: 'start', justifyContent: 'start'}}>
                       <Title>{movie.title}</Title>
                       <Text className='detail-subtext'>{`(${moment(movie.release_date).format('YYYY')})`}</Text>
                     </Col>
@@ -59,7 +59,7 @@ export const MainPage = () => {
             <Col span={24} className='scrollable-div'>
               {
                 credits && credits.cast.filter(item => item.profile_path !== null).slice(0, 20).map((item, idx) => (
-                  <div key={idx + 1} style={{marginRight: 18}}>
+                  <div key={idx + 1} style={{marginRight: 18}} className='pointer'>
                     <CastCard cast={item}/>
                   </div>
                 ))
@@ -86,7 +86,7 @@ export const MainPage = () => {
               }
             </Col>
             <Col span={24}><Title level={2}>Recommend Movies</Title></Col>
-            <Col span={24} className='scrollable-div'>
+            <Col span={24} className='scrollable-div pointer'>
               {
                 recommends && recommends.results.filter(item => item.backdrop_path !== null).map(item => (
                   <div key={item.backdrop_path} style={{marginRight: 18}}>

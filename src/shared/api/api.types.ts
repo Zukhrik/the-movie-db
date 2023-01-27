@@ -117,8 +117,8 @@ export interface IKnownFor {
   backdrop_path: string
   genre_ids: number[]
   id: number
-  media_type: string
-  name: string
+  media_type?: string
+  name?: string
   original_language: string
   original_title: string
   overview: string
@@ -306,4 +306,14 @@ export interface IParams {
   page?: number
   include_adult?: boolean
   region?: string
+  time_window?: string
+  media_type?: string
+}
+
+export interface INowPlaying {
+  dates: {maximum: string, minimum: string}
+  page: number
+  results: []
+  total_pages: number
+  total_results: number
 }

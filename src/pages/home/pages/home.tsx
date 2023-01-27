@@ -1,17 +1,21 @@
 import {useEffect} from 'react'
 import {useStore} from 'effector-react'
-import {Col, Row, Typography} from 'antd'
+import {Col, Radio, Row, Typography} from 'antd'
 import {MovieCard, Spinner} from '../../../shared/ui'
 import {
   $discoverMovieList,
   $inputStore,
+  $nowPlayingStore,
   $searchStore,
+  $trendsStore,
+  $trendTimeWindow,
   fetchGetMovieListFx,
-  fetchMultiSearchFx,
+  fetchMovieSearchFx,
   homePageClosed,
   homePageOpened,
   searchChanges,
-  submited
+  submited,
+  timeWindow
 } from '../model/model'
 import './style.css'
 import {SearchCard} from '../ui'
@@ -21,8 +25,13 @@ export const Home = () => {
   const list = useStore($discoverMovieList)
   const loading = useStore(fetchGetMovieListFx.pending)
   const searchData = useStore($searchStore)
-  const searchLoading = useStore(fetchMultiSearchFx.pending)
+  const searchLoading = useStore(fetchMovieSearchFx.pending)
   const inputStore = useStore($inputStore)
+  const tWindow = useStore($trendTimeWindow)
+  const trends = useStore($trendsStore)
+  const nowPlaying = useStore($nowPlayingStore)
+
+  console.log(nowPlaying)
 
   useEffect(() => {
     homePageOpened()
@@ -71,6 +80,21 @@ export const Home = () => {
             ))
           }
         </Row>
+      </Col>
+      <Col span={24}>
+        <Radio.Group value={tWindow}>
+          <Radio.Button value='day' onChange={(e) => timeWindow(e.target.value)}>Today</Radio.Button>
+          <Radio.Button value='week' onChange={(e) => timeWindow(e.target.value)}>This Week</Radio.Button>
+        </Radio.Group>
+      </Col>
+      <Col span={24} className='scrollable-div'>
+        {
+          trends && trends.results.map(trend => (
+            <div key={trend.id} style={{marginRight: 14}}>
+              <MovieCard card={trend}/>
+            </div>
+          ))
+        }
       </Col>
       {loading && <Spinner/>}
     </Row>

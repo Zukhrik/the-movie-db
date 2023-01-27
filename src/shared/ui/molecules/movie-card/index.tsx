@@ -2,10 +2,10 @@ import {Col, Image, Row} from 'antd'
 import moment from 'moment'
 import {useNavigate} from 'react-router-dom'
 import './movie-card.css'
-import {IMovieItem} from '../../../../pages/home/model/type.model'
+import {IKnownFor} from '../../../api'
 
 type IProps = {
-  card: IMovieItem
+  card: IKnownFor
 }
 export const MovieCard = ({card}: IProps) => {
   const navigate = useNavigate()

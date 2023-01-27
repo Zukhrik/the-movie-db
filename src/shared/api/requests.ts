@@ -133,9 +133,28 @@ export const getPopularPersons = (): R<IResultResponse<IKnown[]>> => {
   })
 }
 
-export const postMultiSearch = (params: IParams):R<IMovieRecommend> => {
+export const getMultiSearch = (params: IParams): R<IMovieRecommend> => {
   return http({
     url: '/search/multi',
     params: params
+  })
+}
+
+export const getMovieSearch = (params: IParams): R<any> => {
+  return http({
+    url: '/search/movie',
+    params: params
+  })
+}
+
+export const getTrends = ({time_window}: IParams): R<IMovieRecommend> => {
+  return http({
+    url: `/trending/movie/${time_window}`
+  })
+}
+
+export const getNowPlaying = ():R<IMovieRecommend> => {
+  return http({
+    url: '/movie/now_playing'
   })
 }

@@ -34,11 +34,13 @@ export const fetchMovieVideosFx = createEffect({
 export const pageOpened = createEvent<number>()
 export const resetMovie = createEvent()
 
+
 //stores
 export const $movieDetail = createStore<null | IMovieDetail>(null)
 export const $movieCredits = createStore<null | IMovieCredit>(null)
 export const $recommend = createStore<null | IMovieRecommend>(null)
 export const $movieVideos = createStore<null | IMovieVideo>(null)
+
 
 $movieDetail.on(fetchMovieDetailFx.doneData, (_, {data}) => data).reset(resetMovie)
 $movieCredits.on(fetchMovieCreditsFx.doneData, (_, {data}) => data).reset(resetMovie)

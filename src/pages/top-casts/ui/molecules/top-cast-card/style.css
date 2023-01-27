@@ -1,23 +1,19 @@
-.top-cast-card {
+
+.cast-wrap {
     cursor: pointer;
 }
 
-.top-cast-card > img {
-    width: 200px;
-}
-
-.cast-wrapper {
+.cast-known-wrap {
     display: flex;
     flex-direction: column;
-    justify-items: start;
+    justify-content: start;
     align-items: center;
-    width: 120px;
+    max-width: 120px;
     cursor: pointer;
 }
 
 .cast-known-wrap > img {
-    width: 100px;
-    height: 150px;
+    width: 100%;
 }
 
 .cast-known-wrap > span {

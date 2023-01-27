@@ -1,20 +1,20 @@
-import {Col, Row, Typography} from 'antd'
-import {IKnown} from '../../../../../shared'
-import {IMAGE_PATH} from '../../../../../entities'
-import './style.css'
-import {useNavigate} from 'react-router-dom'
+import {Col, Row, Typography} from 'antd';
+import {IKnown} from '../../../../../shared';
+import {IMAGE_PATH} from '../../../../../entities';
+import './style.css';
+import {useNavigate} from 'react-router-dom';
 
 type IProp = {
   cast: IKnown
 }
 
 export const TopCastCard = ({cast}: IProp) => {
-  const {Title, Text} = Typography
-  const navigate = useNavigate()
+  const {Title, Text} = Typography;
+  const navigate = useNavigate();
 
   return (
-    <Row wrap={false} gutter={[24, 0]} align='bottom'>
-      <Col className='cast-wrapper' onClick={() => navigate(`/cast/${cast.id}`)}>
+    <Row wrap={false} gutter={[24, 0]} align='top'>
+      <Col className='cast-wrap' onClick={() => navigate(`/cast/${cast.id}`)}>
         <img src={`${IMAGE_PATH.W500}${cast.profile_path}`} alt={cast.profile_path}/>
       </Col>
       <Col flex={1}>
@@ -26,7 +26,7 @@ export const TopCastCard = ({cast}: IProp) => {
             <Row wrap={false} gutter={[12, 0]}>
               {
                 cast.known_for.map(item => (
-                  <Col className='cast-known-wrap' key={item.poster_path} onClick={() => navigate(`/movie/${item.id}`)}>
+                  <Col key={item.poster_path} className='cast-known-wrap' onClick={() => navigate(`/movie/${item.id}`)}>
                     <img src={`${IMAGE_PATH.W500}${item.poster_path}`} alt={item.poster_path}/>
                     <Text key={item.poster_path}>{item.name || item.title}</Text>
                   </Col>
@@ -37,5 +37,5 @@ export const TopCastCard = ({cast}: IProp) => {
         </Row>
       </Col>
     </Row>
-  )
-}
+  );
+};

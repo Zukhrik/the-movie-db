@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import {useEffect} from 'react'
 import {$castDetail, $castImages, $castTargets, fetchCastDetailFx, opened, resetPage} from '../model/model'
 import {useStore} from 'effector-react'
@@ -14,6 +14,7 @@ export const CastDetail = () => {
   const {Title, Text} = Typography
   const imgs = useStore($castImages)
   const targets = useStore($castTargets)
+  const navigate = useNavigate()
 
   useEffect(() => {
     opened(Number(cast_id))
@@ -58,7 +59,7 @@ export const CastDetail = () => {
             <Col span={24} className='scrollable-div'>
               {
                 targets && targets.results.map(item => (
-                  <div key={item.file_path} className='target-post'>
+                  <div key={item.file_path} className='target-post' onClick={() => navigate(`/movie/${item.media.id}`)}>
                     <img src={`${IMAGE_PATH.W500}${item.media.poster_path}`} alt={item.file_path}/>
                     <Text>{item.media.title}</Text>
                   </div>
@@ -70,7 +71,7 @@ export const CastDetail = () => {
               {
                 imgs && imgs.profiles.map(item => (
                   <div key={item.file_path} className='cast-wrap'>
-                    <img src={`${IMAGE_PATH.W500}${item.file_path}`} alt={item.file_path}/>
+                    <Image src={`${IMAGE_PATH.W500}${item.file_path}`} style={{width: 250, height: 360, marginRight: 24}}/>
                   </div>
                 ))
               }
